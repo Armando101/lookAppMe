@@ -6,3 +6,4 @@ Está aplicación fue elaborada por:
 
 - Armando Rivera
 - Griselda Silvestre
+- Manuel Santiago
