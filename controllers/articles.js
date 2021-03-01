@@ -17,7 +17,7 @@ function obtenerArticulos(req, res) {
   // Simulando dos artículos y respondiendolos
   const article1 = new Article(1, "camisa roja de mangas", 180);
   const article2 = new Article(2, "vestido floreado", 200);
-  res.send([article1, article2]);
+  res.status(200).send([article1, article2]);
 }
 /*
     @description    función que modifica un artículo     

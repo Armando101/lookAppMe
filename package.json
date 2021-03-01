@@ -1,0 +1,30 @@
+{
+  "name": "lookappme",
+  "version": "1.0.0",
+  "description": "This is an app to sell and buy clothes",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armando101/lookAppMe.git"
+  },
+  "keywords": [
+    "Clothes",
+    "sell",
+    "buy"
+  ],
+  "contributors": ["Armando Rivera", "Grislenda", "Manule"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Armando101/lookAppMe/issues"
+  },
+  "homepage": "https://github.com/Armando101/lookAppMe#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
