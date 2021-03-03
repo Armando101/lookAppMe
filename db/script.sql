@@ -1,9 +1,9 @@
 -- To execute this script run
 -- source script.sql in your MySql terminal
 
-DROP DATABASE IF EXISTS lookAppMe2;
-CREATE DATABASE IF NOT EXISTS lookAppMe2;
-USE lookAppMe2;
+DROP DATABASE IF EXISTS lookAppMe;
+CREATE DATABASE IF NOT EXISTS lookAppMe;
+USE lookAppMe;
 
 
 /* Tablas independientes (No tienen llave foranea) */
