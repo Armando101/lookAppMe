@@ -1,8 +1,8 @@
-# Look app me
+¿Cuáles son las ventajas de usar el modelo relacional en nuestro proyecto?
 
-Aplicación para compra y venta de ropa nueva y seminueva.
-
-Está aplicación fue elaborada por:
+-Los datos serán consistentes ya que la estructura de la base de datos esta bien estructurada.
+-Proteccion en las compras, ya que las tablas no se actualizaran hasta que no se termine una transacción.
+-Al ser un proyecto pequeno este modelo es suficiente para el tamaño de los datos.
 
 - Armando Rivera
 - Griselda Silvestre
