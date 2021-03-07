@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Rutas
-appAPI(app, "articles");
+appAPI(app, "articulos");
+appAPI(app, "posts");
 appAPI(app, "users");
 appAPI(app, "ventas");
 
