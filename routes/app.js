@@ -1,11 +1,11 @@
 const express = require("express");
 const AppService = require("../services/app");
 
-function appAPI(app) {
+function appAPI(app, name) {
   const router = express.Router();
-  app.use(`api/${app}`, router);
+  app.use(`/api/${name}`, router);
 
-  const appService = new AppService();
+  const appService = new AppService(name);
 
   router.get("/", async function (req, res, next) {
     const { tags } = req.query;
@@ -16,7 +16,7 @@ function appAPI(app) {
         message: "Data listed",
       });
     } catch (error) {
-      next(eror);
+      next(error);
     }
   });
 
@@ -75,4 +75,4 @@ function appAPI(app) {
   });
 }
 
-exports.module = appAPI;
+module.exports = appAPI;
