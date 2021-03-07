@@ -35,7 +35,7 @@ function appAPI(app, name) {
   });
 
   router.post("/", async function (req, res, next) {
-    const { body: data } = req.body;
+    const { body: data } = req;
     try {
       const createdData = await appService.createData(data);
       res.status(201).json({
@@ -48,10 +48,10 @@ function appAPI(app, name) {
   });
   router.put("/:dataId", async function (req, res, next) {
     const { dataId } = req.params;
-    const { body: data } = req.body;
+    const { body: data } = req;
 
     try {
-      const updatedData = await appService.updateData(dataId, data);
+      const updatedData = await appService.updateData({ dataId, data });
       res.status(200).json({
         data: updatedData,
         message: "Data updated",
