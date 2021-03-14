@@ -6,8 +6,9 @@ class AppService {
     this.mongoDB = new MongoLib();
   }
 
-  async getAllData(tags) {
-    const query = tags && { tags: { $in: tags } };
+  async getAllData(key, value) {
+    const query = key && { [key]: { $regex: `.*${value}.*` } };
+    console.log("Query", query);
     const data = await this.mongoDB.getAll(this.collection, query);
     return data || [];
   }

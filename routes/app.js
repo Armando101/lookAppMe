@@ -8,12 +8,16 @@ function appAPI(app, name) {
   const appService = new AppService(name);
 
   router.get("/", async function (req, res, next) {
-    const { tags } = req.query;
+    const tags = req.query;
+    const key = Object.keys(tags)[0];
+    const value = Object.values(tags)[0];
+
     try {
-      const data = await appService.getAllData(tags);
+      const data = await appService.getAllData(key, value);
       res.status(200).json({
-        data,
+        length: data.length,
         message: "Data listed",
+        data,
       });
     } catch (error) {
       next(error);
