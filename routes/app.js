@@ -9,9 +9,11 @@ function appAPI(app, name) {
 
   router.get("/", async function (req, res, next) {
     const tags = req.query;
+    let { limit } = req.query;
+    limit = Number(limit);
 
     try {
-      const data = await appService.getAllData(tags);
+      const data = await appService.getAllData(tags, limit);
       res.status(200).json({
         length: data.length,
         message: "Data listed",

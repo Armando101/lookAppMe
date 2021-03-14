@@ -3,7 +3,9 @@ const MongoLib = require("../lib/mongo");
 function getQuerySearch(tags) {
   let query = {};
   for (const field in tags) {
-    query[field] = { $regex: `.*${tags[field]}.*` };
+    if (field !== "limit") {
+      query[field] = { $regex: `.*${tags[field]}.*` };
+    }
   }
   return query;
 }
@@ -14,9 +16,9 @@ class AppService {
     this.mongoDB = new MongoLib();
   }
 
-  async getAllData(tags) {
+  async getAllData(tags, limit) {
     const query = tags && getQuerySearch(tags);
-    const data = await this.mongoDB.getAll(this.collection, query);
+    const data = await this.mongoDB.getAll(this.collection, query, limit);
     return data || [];
   }
 
