@@ -1,14 +1,21 @@
 const MongoLib = require("../lib/mongo");
 
+function getQuerySearch(tags) {
+  let query = {};
+  for (const field in tags) {
+    query[field] = { $regex: `.*${tags[field]}.*` };
+  }
+  return query;
+}
+
 class AppService {
   constructor(collection) {
     this.collection = collection;
     this.mongoDB = new MongoLib();
   }
 
-  async getAllData(key, value) {
-    const query = key && { [key]: { $regex: `.*${value}.*` } };
-    console.log("Query", query);
+  async getAllData(tags) {
+    const query = tags && getQuerySearch(tags);
     const data = await this.mongoDB.getAll(this.collection, query);
     return data || [];
   }

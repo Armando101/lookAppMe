@@ -9,11 +9,9 @@ function appAPI(app, name) {
 
   router.get("/", async function (req, res, next) {
     const tags = req.query;
-    const key = Object.keys(tags)[0];
-    const value = Object.values(tags)[0];
 
     try {
-      const data = await appService.getAllData(key, value);
+      const data = await appService.getAllData(tags);
       res.status(200).json({
         length: data.length,
         message: "Data listed",
