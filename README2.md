@@ -1,120 +1,55 @@
-:high_brightness: **Integrantes** :high_brightness:
-1. Armando Rivera
-2. Griselda Silvestre
-3. Manuel Santiago
+¿Cuáles son las ventajas de usar el modelo relacional en nuestro proyecto?
 
+-Los datos serán consistentes ya que la estructura de la base de datos esta bien estructurada.
+-Proteccion en las compras, ya que las tablas no se actualizaran hasta que no se termine una transacción.
+-Al ser un proyecto pequeno este modelo es suficiente para el tamaño de los datos.
 
-:zap: **Objetivo** :zap:
+- Armando Rivera
+- Griselda Silvestre
+- Manuel Santiago
 
-lookAppMe permite a usuarios (vendedores y compradores) comprar y/o vender ropa semi nueva y nueva. 
+### ¿Qué espero que haga el proyecto?
 
-Algunas prendas que se publican son:
+Poner en práctica todo lo aprendido en el el curso y obtener un producto funcional que permita compra y venta de ropa nueva y seminueva.
 
-- 👕
-- 👗
-- 👖
-- 👚
-- 👞
-- 👓
-- 👜
-- Etcétera 
+### ¿Qué tipos de usuarios tendra nuestro sistema?
 
+- Vendedores
+- Clientes
+- Administradores
 
-:exclamation: :exclamation: **Tipos de usuarios** :exclamation: :exclamation:
+### ¿Qué acciones puede realizar cada usuario?
 
-Se definio un solo usuario, con un atributo de tipo que nos permite conocer si se trata de un usuario-vendedor o usuario-comprador
+- Todos:
+  - Hacer login, ver los productos en la plataforma.
+- Vendedor:
+  - Vender productos, editar y eliminar los que ya había publicado
+  - Dejar un comentario al cliente
+- Cliente:
+  - Agregar productos favoritos o a la lista de deseos
+  - Comprar productos
+  - Cancelar productos
+  - Hacer devoluciones
+  - Dejar calificación del vendedor y producto
+- Administrador:
+  - Agregar vendedores
+  - Dar de baja vendedores
+  - Quitar productos que no cumplan con los requisitos y politicas de la empresa
 
-- Administrador
-- Vendedor
-- Comprador
+### ¿Qué información se necesita?
 
+Que tipo de prendas e ítems se van a comercializar ya que cada uno tiene diferentes atributos.
+Y como se hará el proceso de pago.
 
-:x::x:**Historias de usuarios**:x::x:
+### ¿Cuáles son las principales entidades?
 
-:point_right: **Administrador**
+El usuario y los artículos
 
-- Agregar vendedores
-- Dar de baja vendedores
-- Eliminar las prendas que no cumplan con los requisitos o políticas de la app
+### ¿Qué características tiene cada entidad?
 
-:point_right:**Usuario (vendedor)**
+El usuario tiene que estar registrado y
 
-- Vender productos
-- Editar y eliminar prendas ya publicadas 
-- Dejar un comentario al cliente
+### ¿Qué funcionalidades tiene cada entidad?
 
-:point_right:**Usuario (comprador)**
-
-- Agregar productos favoritos o a la lista de deseos
-- Comprar productos
-- Cancelar productos 
-- Hacer devoluciones
-- Dejar calificación del vendedor y producto
-
-:point_right:**Todos**
-
-- Ver los productos en la plataforma
-- Autenticación (login)
-
-:star2::star2: **Entidades principales y características** :star2::star2:
-
-1. Usuario:
-    - id
-    - username
-    - nombre
-    - apellido 
-    - correo
-    - password
-    - teléfono
-    - domicilio
-    - ocupación
-    - foto
-    - tipo
-
-
-2. Prenda (artículo)
-
-    - id
-    - nombre
-    - precio
-    - fotos
-    - descripción
-    - categoría
-    - vendedor
-    - ubicación
-    - estado
-
-3. Venta
-    - id
-    - idPrenda
-    - idComprador
-    - idVendedor
-    - fecha
-    - estado
-
-:anger::anger: **Información necesaria** :anger::anger:
-
-Los datos de contácto, tanto del vendedor como del comprador y las características de la prenda. También se necesita saber cuando ocurre una venta, quien vende, quien compra y que compra. 
-
-:boom::boom: **Funcionalidades de cada entidad** :boom::boom:
-
-:arrow_right: Usuario
-
-* Agregar un usuario
-* Actualizar la información del usuario
-* Buscar un usuario
-* Eliminar un usuario
-
-:arrow_right: Artículo (prenda)
-
-* Crear una prenda
-* Actualizar la información de la prenda
-* Eliminar una prenda
-* Buscar una prenda 
-
-:arrow_right: Venta
-
-* Crear una venta
-* Modificar la información de una venta
-* Eliminar una venta
-* Buscar una venta 
+El usuario se puede actualizar su información, agregar artículos y borrar artículos.
+Los artículos se pueden buscar por id, por categoría, actualizar información y guardarlos.
